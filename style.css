@@ -2,6 +2,21 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+:root {
+    --Green-500: hsl(171, 66%, 44%);
+    --Green-800: hsl(171, 66%, 34%);
+    --Blue-100: hsl(233, 100%, 69%);
+    --Blue-300: hsl(233, 65%, 59%);
+    --Gray-700: hsl(210, 10%, 33%);
+    --Gray-500: hsl(201, 11%, 66%);
+    --Gray-100: hsl(220, 18%, 97%);
+
+    --font-main: "Bai Jamjuree", sans-serif;
+    --font-weight-400: 400;
+    --font-weight-600: 600;
 }
 
 html {
@@ -23,14 +38,24 @@ dd {
     margin-block-end: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(images/bg-header-mobile.png);
+}
+
+ul,
+ol {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     min-height: 100vh;
     line-height: 1.5;
+    padding: 0;
+    margin: 0;
 }
 
 h1,
@@ -46,8 +71,31 @@ label {
 h1,
 h2,
 h3,
-h4 {
-    text-wrap: balance;
+h4,
+footer ul li {
+    color: var(--Gray-700);
+    font-weight: var(--font-weight-600);
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(2rem, 3.4vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+}
+
+h3 {
+    font-size: clamp(1.4rem, 2.7vw, 1.8rem);
+}
+
+p {
+    color: var(--Gray-500);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: var(--font-weight-400);
+    text-align: center;
+    max-width: 47rem;
 }
 
 a:not([class]) {
@@ -77,11 +125,247 @@ textarea:not([rows]) {
     scroll-margin-block: 5ex;
 }
 
-:root {
-    --Green-500: hsl(171, 66%, 44%);
-    --Blue-100: hsl(233, 100%, 69%);
-    --Gray-700: hsl(210, 10%, 33%);
-    --Gray-500: hsl(201, 11%, 66%);
+header,
+main,
+section,
+.section-3 ul,
+.section-3 ul li,
+.section-4 ul,
+.section-4 ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 1.5rem;
+}
 
-    --font-main: "DM Sans", sans-serif;
+header {
+    margin-top: 7em;
+}
+
+header p {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+}
+
+header img {
+    width: 7rem;
+    margin-bottom: 2rem;
+}
+
+header .button,
+.section-5 .button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+header .button button,
+.section-5 .button button {
+    flex-grow: 1;
+    max-width: 19rem;
+    min-width: 13rem;
+    height: 3rem;
+    font-weight: var(--font-weight-600);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    margin: 0.8rem 0.5rem;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.ios {
+    background-color: var(--Green-500);
+    box-shadow: 0 0.2rem 0 var(--Green-800);
+}
+
+.mac {
+    background-color: var(--Blue-100);
+    box-shadow: 0 0.2rem 0 var(--Blue-300);
+}
+
+.ios:active,
+.mac:active {
+    transform: translateY(0.2rem);
+    box-shadow: none;
+}
+
+section {
+    margin: 6rem 0 0 0;
+}
+
+section p {
+    margin-bottom: 6rem;
+}
+
+.section-1 .split {
+    margin-bottom: 3rem;
+}
+
+.section-1 .split ul li p {
+    margin-bottom: 3rem;
+}
+
+.section-3 ul {
+    margin: 0;
+    align-items: start;
+}
+
+.section-3 ul,
+.section-4 ul {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.section-3 ul li,
+.section-3 ul li p,
+.section-4 ul li {
+    margin: 0;
+}
+
+.section-3 ul li {
+    max-width: 23rem;
+    gap: 1.5rem;
+}
+
+.section-3 ul li span {
+    height: 40px;
+}
+
+.section-4 {
+    margin-top: 12rem;
+}
+
+.section-4 ul {
+    gap: 5rem;
+}
+
+.section-4 ul li {
+    width: 10rem;
+}
+
+.section-5 p {
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: var(--Gray-100);
+    margin-top: 10rem;
+    padding: 5rem 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+footer #logo {
+    width: 4rem;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+footer ul li {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--Gray-700);
+}
+
+footer .icon {
+    display: flex;
+    gap: 2rem;
+}
+
+footer .icon img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.attribution {
+    background-color: var(--Gray-100);
+    text-align: center;
+}
+
+@media (min-width: 596px) {
+
+    main,
+    .section-1 {
+        margin: 6rem 0 0 0;
+    }
+
+    section {
+        margin: 6rem 1rem 0 1rem;
+    }
+
+    .section-1 .split {
+        width: 100vw;
+        padding-right: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        gap: 7%;
+    }
+
+    .section-1 .split ul {
+        max-width: 26rem;
+    }
+
+    .section-1 .split img {
+        align-self: self-start;
+        position: sticky;
+    }
+
+    .section-1 .split ul li p,
+    .section-1 .split ul li h3 {
+        text-align: left;
+    }
+
+    .section-1 .split img {
+        width: 55%;
+        height: fit-content;
+    }
+}
+
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    footer ul {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 4rem;
+        row-gap: 1.5rem;
+        align-items: start;
+    }
+
+    footer ul li {
+        text-align: left;
+        width: auto;
+    }
+
+    footer .icon {
+        margin-left: auto;
+    }
+
+    footer #logo {
+        margin-right: 5%;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-image: url(images/bg-header-desktop.png);
+    }
 }
